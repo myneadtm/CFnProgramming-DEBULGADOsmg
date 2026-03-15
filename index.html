@@ -486,6 +486,15 @@ footer{
   .hero-profile-ring{width:150px;height:200px;}
 }
 </style>
+<!-- Login Guard -->
+<script>
+(function(){
+  try{
+    var s=JSON.parse(localStorage.getItem('student_session')||'{}');
+    if(!s.loggedIn) window.location.replace('login.html');
+  }catch(e){ window.location.replace('login.html'); }
+})();
+</script>
 </head>
 <body>
 
@@ -505,6 +514,7 @@ footer{
     <a href="lesson.html" class="nav-link lesson-link">📘 Lesson</a>
     <a href="quiz.html" class="nav-link quiz-link">📝 Quiz →</a>
     <a href="practical.html" class="nav-link practical-link">💻 Practical</a>
+    <a href="profile.html" class="nav-link" style="border-color:rgba(168,85,247,0.3);color:#a855f7;">👤 Profile</a>
   </div>
 </nav>
 
